@@ -4,7 +4,7 @@ export enum ProjectType{
 }
 
 export enum ProjectBrand {
-  FIAT = "fiat",
+  MAJORS_SOLUTIONS = 'majors-solutions',
 }
 
 export interface ProjectInfoInterface {

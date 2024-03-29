@@ -3,8 +3,6 @@ import { PAGE_TITLE, brandLinks } from "@/constants";
 import {Context} from "@/contexts/MainContext";
 import {
   dataMenuButtons,
-  dataMenuButtonsMobile,
-  dataMenuLabelMobile,
   dataMenuLabels,
 } from "@/data/menu.data";
 import productDetails, {ProductTab} from "@/data/product-details.data";
@@ -100,7 +98,7 @@ const Navigation: FC = observer(() => {
           </Conditional>
 
           <Conditional notOn={"desktop"}>
-            {dataMenuLabelMobile().map((item, index) => {
+            {dataMenuLabels().map((item, index) => {
               return (
                 <div className={styles.menuItem} key={`menuItem-${item.id}`}>
                   <a
@@ -156,9 +154,9 @@ const Navigation: FC = observer(() => {
               );
             })}
 
-            {!!dataMenuButtonsMobile.length && (
+            {!!dataMenuButtons.length && (
               <div className={styles.buttonsHolder}>
-                {dataMenuButtonsMobile.map((item) => {
+                {dataMenuButtons.map((item) => {
                   return (
                     <a
                       style={{width: "100%", padding: "0 16px"}}
