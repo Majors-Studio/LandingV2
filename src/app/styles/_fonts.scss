@@ -1,0 +1,173 @@
+@font-face {
+  font-family: "font awesome";
+  src: url("fonts/fa/fa-solid-900.woff2"),
+    url("fonts/fa/fa-solid-900.woff2") format("woff2"),
+    url("fonts/fa/fa-solid-900.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "font awesome brands";
+  src: url("fonts/fab/fa-brands-400.woff2"),
+    url("fonts/fab/fa-brands-400.woff2") format("woff2"),
+    url("fonts/fab/fa-brands-400.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  font-weight: 100;
+  font-style: normal;
+  src: url("fonts/Helvetica/Helvetica.ttc") format("ttc");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  font-weight: 200;
+  font-style: normal;
+  src: url("fonts/Helvetica/Helvetica.ttc") format("ttc");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  font-weight: 300;
+  font-style: normal;
+  src: url("fonts/Helvetica/Helvetica.ttc") format("ttc");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  font-weight: 400;
+  font-style: italic;
+  src: url("fonts/Helvetica/Helvetica.ttc") format("ttc");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  font-weight: 400;
+  font-style: normal;
+  src: url("fonts/Helvetica/Helvetica.ttc") format("ttc");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Plak";
+  src: url("fonts/neue/NeuePlak-Bold.woff") format("woff2"),
+    url("fonts/neue/NeuePlak-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Plak";
+  src: url("fonts/neue/NeuePlak-Light.woff2") format("woff2"),
+    url("fonts/neue/NeuePlak-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Plak";
+  src: url("fonts/neue/NeuePlak-Regular.woff2") format("woff2"),
+    url("fonts/neue/NeuePlak-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Plak ExtraBlack";
+  src: url("fonts/neue/NeuePlak-ExtraBlack.woff2") format("woff2"),
+    url("fonts/neue/NeuePlak-ExtraBlack.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+// FUTURA PT
+
+@font-face {
+  font-family: "Futura";
+  font-weight: 400;
+  font-style: normal;
+  src: url("fonts/futura_pt/futura_pt_medium.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Futura";
+  font-weight: 400;
+  font-style: oblique;
+  src: url("fonts/futura_pt/futura_pt_medium_oblique.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Futura";
+  font-weight: 600;
+  font-style: normal;
+  src: url("fonts/futura_pt/futura_pt_book.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Futura";
+  font-weight: 700;
+  font-style: normal;
+  src: url("fonts/futura_pt/futura_pt_heavy.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura";
+  font-weight: 800;
+  font-style: normal;
+  src: url("fonts/futura_pt/futura_pt_bold.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura";
+  font-weight: 800;
+  font-style: oblique;
+  src: url("fonts/futura_pt/futura_pt_bold_oblique.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura";
+  font-weight: 900;
+  font-style: normal;
+  src: url("fonts/futura_pt/futura_pt_extra_bold.woff") format("woff");
+  font-display: swap;
+}
+
+// DIN NEXT LT PRO
+@font-face {
+  font-family: "Din";
+  font-weight: 400;
+  font-style: normal;
+  src: url("fonts/din-next-lt-pro/DINNextLTPro-Regular.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Din";
+  font-weight: 400;
+  font-style: italic;
+  src: url("fonts/din-next-lt-pro/DINNextLTPro-Italic.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Din";
+  font-weight: 700;
+  font-style: normal;
+  src: url("fonts/din-next-lt-pro/DINNextLTPro-Bold.woff") format("woff");
+  font-display: swap;
+}

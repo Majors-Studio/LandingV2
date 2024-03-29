@@ -1,0 +1,76 @@
+$primary: #bbde01;
+
+// BRAND COLORS
+$primary: #bbde01;
+$secondary: #18131f;
+
+// BACKGROUNDS PLATES COLORS
+$background-primary: #202020;
+$background-secondary: #ede8d6;
+$background-light: #f8f3e1;
+
+// BULLETS
+$bullet-color: #c6bfa9;
+$bullet-color-active: $primary;
+
+// FONTS COLORS
+$text-primary: #f8f3e1;
+$text-secondary: #393939;
+$text-dark: $background-primary;
+$default-white: #ffffff;
+$default-black: #000000;
+
+// FONT WEIGHT
+$regular: 400;
+$book: 600;
+$bold: 700;
+$heavy: 700;
+$extra-bold: 900;
+
+// INPUTS COLORS
+$input-box-primary: #999891;
+$input-box-secondary: #636363;
+$border-color: #17131e;
+$font: "Futura", Roboto, Helvetica Neue, sans-serif;
+$font-secondary: "Din", Arial, sans-serif;
+$fontawesome: "font awesome";
+$fontawesome-brands: "font awesome brands";
+$scrollbar-track: rgba($primary, 0.23);
+$scrollbar-body: $primary;
+$border-primary: $secondary;
+$border-size: clamp(8px, 2vh, 18px);
+
+$section-horizontal-padding: clamp(40px, 4vw, 90px);
+$section-horizontal-padding-desktop: clamp(70px, 4vw, 90px);
+
+$min-mobile-height: 568px;
+
+$container-max-width: 1280px;
+
+$font-weight-thin: 100;
+$font-weight-ultralight: 200;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-black: 800;
+$font-weight-extrablack: 900;
+
+$header-size: 44px;
+$header-size-desktop: 65px;
+
+$transition-time: 400ms;
+$transition-time-quick: 200ms;
+$transition-time-quickest: 50ms;
+$transition-easing: ease-in-out;
+
+$nav-width: 224px;
+$nav-width-desktop: 0px;
+
+$screen-sm-min: 576.1px;
+$screen-md-min: 768.1px;
+$screen-lg-min: 992.1px;
+$screen-desktop-min: 1024.1px;
+$screen-xl-min: 1200.1px;
+$screen-xxl-min: 1920.1px;
+$screen-max-size: 2560px;
