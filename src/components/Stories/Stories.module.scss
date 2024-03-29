@@ -1,6 +1,6 @@
-@import '@/styles/theme';
-@import '@/styles/animations';
-@import '@/styles/mixins';
+@import "@/styles/theme";
+@import "@/styles/animations";
+@import "@/styles/mixins";
 
 .wrapper {
   width: 100%;
@@ -26,34 +26,6 @@
   }
 }
 
-.story {
-  position: absolute;
-  user-select: none;
-
-  img {
-    user-select: none;
-  }
-}
-
-.video {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  left: 0;
-  object-fit: cover;
-  object-position: bottom;
-  z-index: 0;
-}
-
-.story {
-  &,
-  & > div {
-    width: 100%;
-    height: 100%;
-  }
-}
-
 .clickCta {
   display: flex;
   flex-direction: row;
@@ -65,8 +37,8 @@
   width: 100%;
   top: 30px;
   height: 20px;
-  
-  p{
+
+  p {
     width: auto;
     margin-left: 10px;
     font-size: 10px;
@@ -75,17 +47,11 @@
 
   img {
     margin-left: 16px;
-    animation-name: 'pointer';
+    animation-name: "pointer";
     animation-duration: 7s;
     animation-iteration-count: infinite;
     padding-right: 18px;
   }
-}
-
-.imageHolder {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .scrollCta {
@@ -169,7 +135,7 @@
   animation-name: loading;
   width: 100%;
   height: 100%;
-  background-color: #FFF;
+  background-color: #fff;
 }
 
 // .nextTopic {
@@ -198,15 +164,14 @@
   font-size: toRem(16);
   z-index: 2;
   display: flex;
-  .nextTopicText{
+  .nextTopicText {
     display: inline;
     svg {
-        transform: rotate(270deg)!important;
-        margin-left: toRem(10);
+      transform: rotate(270deg) !important;
+      margin-left: toRem(10);
     }
   }
 }
-
 
 .gradient {
   position: absolute;
@@ -214,7 +179,11 @@
   left: 0;
   width: 100%;
   height: 20%;
-  background: linear-gradient(0deg, rgba($background-primary,1) 0%, rgba($background-primary,0) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba($background-primary, 1) 0%,
+    rgba($background-primary, 0) 100%
+  );
 }
 
 .bar {
@@ -244,14 +213,14 @@
     height: 4px;
     background-color: $input-box-primary;
     &.hasGone {
-      background-color: #FFF;
+      background-color: #fff;
     }
   }
 }
-.imageHolder{
+.imageHolder {
   z-index: -1;
-  span{
-    img{
+  span {
+    img {
       object-fit: cover;
     }
   }
