@@ -3,14 +3,14 @@ import { FC } from "react"
 import styles from "./stories-section.module.scss"
 import { dataHero, IHero } from "@/data/hero.data"
 
-const MainStories: FC = () => {
+const HeroMobile: FC = () => {
   const items: IHero[] | any = []
   dataHero.map((item, index) =>
     items.push({
       showNext: true,
       nextTitle: item.cardTitle,
-      title: item.titleStories,
-      description: item.descriptionStories,
+      title: item.title.mobile,
+      description: item.description.mobile,
       body: (
         <>
           <div className={styles.slides}>
@@ -20,9 +20,9 @@ const MainStories: FC = () => {
             ) : (
               <div className={styles.slidesContainer}>
                 <div className={styles.bottomBox}>
-                  {index > 0 && <h2>{item.titleStories}</h2>}
+                  {index > 0 && <h2>{item.title.mobile}</h2>}
                   <p className={styles.contentText}>
-                    {item.descriptionStories}
+                    {item.description.mobile}
                   </p>
                 </div>
               </div>
@@ -47,4 +47,4 @@ const MainStories: FC = () => {
   )
 }
 
-export default MainStories
+export default HeroMobile

@@ -4,7 +4,7 @@ import scssStyles from "@/utils/scssStyles"
 import React, { FC } from "react"
 import styles from "./HeroDesktop.module.scss"
 
-export const HeroDesktop: FC = () => {
+const HeroDesktop: FC = () => {
   const previous = React.useRef<(() => void) | null>(null)
   const next = React.useRef<(() => void) | null>(null)
 
@@ -26,15 +26,8 @@ export const HeroDesktop: FC = () => {
                   : styles.descriptionContent,
               ])}
             >
-              {item.id === "0" ? (
-                <></>
-              ) : (
-                <>
-                  <h2 className={styles.tlt}>{item.title}</h2>
-                </>
-              )}
-
-              <p>{item.description}</p>
+              <h2 className={styles.tlt}>{item.title.desktop}</h2>
+              <p>{item.description.desktop}</p>
             </div>
           </div>
         </div>
@@ -49,19 +42,8 @@ export const HeroDesktop: FC = () => {
     })
   )
 
-  const dadosFiltrados = dataHero
-    .map((d) => ({
-      ...d,
-      src: d.cardSrc,
-      title: d.cardTitle,
-    }))
-    .filter((d) => d.id !== "0")
   return (
-    <div
-      id="desktopDisplay"
-      className={styles.container}
-    >
-      {/* não retirar esse h1 ele é fundamental para os headers de SEO */}
+    <div id="desktopDisplay" className={styles.container}>
       {<h1 className={styles.pageHeading}>{items[0].title}</h1>}
       <Display
         previousEvent={(e) => {
@@ -73,7 +55,7 @@ export const HeroDesktop: FC = () => {
         items={items}
       />
       <Cards
-        items={dadosFiltrados.map((d) => ({
+        items={dataHero.map((d) => ({
           ...d,
           src: d.cardSrc.desktop,
           title: d.cardTitle,
@@ -82,3 +64,5 @@ export const HeroDesktop: FC = () => {
     </div>
   )
 }
+
+export default HeroDesktop

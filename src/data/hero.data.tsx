@@ -6,10 +6,14 @@ import { HERO_ASSETS } from "@/assets/hero.assets";
 
 export interface IHero {
   id: string;
-  title: string | JSX.Element;
-  titleStories: string | JSX.Element;
-  description: string | JSX.Element;
-  descriptionStories: string | JSX.Element;
+  title: {
+    desktop: string | JSX.Element;
+    mobile: string | JSX.Element;
+  };
+  description: {
+    desktop: string | JSX.Element;
+    mobile: string | JSX.Element;
+  };
   cardTitle: string;
   cardSrc: { desktop: string; mobile: string };
   backgrounds?: IncludePrefixResponsiveSizes[];
@@ -25,14 +29,18 @@ const BACKGROUNDS_PREFIX = `${HERO_DESKTOP_PREFIX}backgrounds/`;
 export const dataHero: IHero[] = [
   {
     id: "0",
-    title: <h1></h1>,
-    titleStories: <></>,
-    description: <></>,
-    descriptionStories: <></>,
-    titleTag: "",
+    title: {
+      desktop: "Teste Título 01",
+      mobile: "Teste Título 01",
+    },
+    description: {
+      desktop: "Teste Descrição 01",
+      mobile: "Teste Descrição 01",
+    },
+    titleTag: "Teste Título Tag 01",
     altTag:
-      "",
-    cardTitle: "",
+      "Teste Alt Tag 01",
+    cardTitle: "Teste Card Título 01",
     cardSrc: {
       desktop: HERO_ASSETS.desktop.thumb.welcome,
       mobile: HERO_ASSETS.mobile.thumb.welcome,

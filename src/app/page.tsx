@@ -2,8 +2,8 @@
 
 import Conditional from "@/components/Conditional"
 import { Context } from "@/contexts/MainContext"
-import { HeroDesktop } from "@/sections/hero-section"
-import MainStories from "@/sections/stories-section"
+import HeroDesktop from "@/sections/Hero/desktop"
+import HeroMobile from "@/sections/Hero/mobile"
 import React, { useContext, useEffect } from "react"
 
 export default function Home() {
@@ -40,7 +40,7 @@ export default function Home() {
         <HeroDesktop />
       </Conditional>
       <Conditional notOn="desktop">
-        <MainStories />
+        <HeroMobile />
       </Conditional>
     </main>
   )
