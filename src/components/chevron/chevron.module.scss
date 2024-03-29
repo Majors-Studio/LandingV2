@@ -1,0 +1,32 @@
+@import "@/styles/theme", "@/styles/mixins", "@/styles/animations";
+
+.primary {
+  width: 45px;
+  height: 45px;
+  background-color: #F8EBBE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #DDAF66;
+    svg{
+      path{
+        stroke: #000;
+      }
+    }
+  }
+}
+
+.secundary {
+}
+
+.disable {
+  opacity: 0.4;
+  cursor: auto;
+  &:hover {
+    background-color: $primary;
+  }
+}

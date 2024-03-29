@@ -1,7 +1,7 @@
 "use client";
 
-import { useMainContext } from "@/contexts/MainContext";
-import { FC } from "react";
+import { Context } from "@/contexts/MainContext";
+import { FC, useContext } from "react";
 
 interface ConditionalProps {
   notOn?: "desktop" | "mobile";
@@ -18,10 +18,7 @@ const Conditional: FC<ConditionalProps> = ({
   condition,
   children,
 }) => {
-  const { state } = useMainContext();
-
-  console.log("isMobile", state.layout.isMobile);
-  console.log("isDesktop", state.layout.isDesktop);
+  const { state } = useContext(Context);
 
   if (condition !== null && condition) {
     return <>{children}</>;

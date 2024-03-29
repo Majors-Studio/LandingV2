@@ -1,0 +1,82 @@
+@import "@/styles/theme", "@/styles/mixins";
+
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+  h1 {
+    display: none;
+  }
+
+  .slides {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .content {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      margin: 0 auto;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      flex-direction: column;
+
+      .descriptionContent {
+        width: 25%;
+        top: 22%;
+        left: 12%;
+        position: relative;
+
+        .tlt {
+          font-size: 48px;
+          text-transform: uppercase;
+          font-style: italic;
+          line-height: 1;
+          margin-bottom: 0.8rem;
+          color: $primary;
+
+          span {
+            font-weight: $extra-bold;
+          font-style: normal;
+
+          }
+        }
+        p {
+          margin-top: 15px;
+          line-height: 24px;
+          max-width: 88%;
+          font-size: clamp(1rem, 1.01vw, 1.375rem) !important;
+        }
+      }
+
+      .first_descriptionContent {
+        width: 100%;
+        top: 88px;
+        position: absolute;
+        margin: auto;
+        height: calc(90% - 88px);
+        svg {
+          margin: auto;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.bottomRightSvg{
+position: absolute;
+bottom: 21%;
+right: 11%;
+}
+

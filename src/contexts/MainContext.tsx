@@ -1,35 +1,49 @@
-"use client";
+'use client'
+import {
+  layoutInitialState,
+  layoutReducer,
+  LayoutType,
+} from "@/reducers/layoutReducer";
+import { reducerActionType } from "@/types/reducerActionType";
+import React, { createContext, useReducer, useState } from "react";
 
-import { createContext, useContext } from "react";
-
-interface layoutInitialState {
-  layout: {
-    isDesktop: boolean;
-    isMobile: boolean;
-  };
+interface initialStateType {
+  layout: LayoutType;
 }
 
-interface MainContextType {
-  state: layoutInitialState;
+interface ContextType  {
+  state: initialStateType;
   dispatch: React.Dispatch<any>;
 }
 
-const AppContext = createContext({} as MainContextType);
-
-export const AppProvider = ({ children }: { children: React.ReactNode }) => {
-  const value = {
-    state: {
-      layout: {
-        isDesktop: true,
-        isMobile: false,
-      },
-    },
-    dispatch: () => null,
-  };
-
-  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
+const initialState: initialStateType = {
+  layout: layoutInitialState,
 };
 
-export const useMainContext = () => {
-  return useContext(AppContext);
+export const Context = createContext<ContextType>({
+  state: initialState,
+  dispatch: () => null,
+});
+
+const mainReducer = (state: initialStateType, action: reducerActionType) => ({
+  layout: layoutReducer(state.layout, action),
+});
+
+export const ContextProvider: any = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
+  const [state, dispatch] = useReducer(mainReducer, initialState);
+
+  return (
+    <Context.Provider
+      value={{
+        state,
+        dispatch,
+      }}
+    >
+      {children}
+    </Context.Provider>
+  );
 };

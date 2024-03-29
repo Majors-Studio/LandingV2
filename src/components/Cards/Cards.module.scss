@@ -1,0 +1,86 @@
+@import "@/styles/theme", "@/styles/mixins", "@/styles/animations";
+
+.container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .cards {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+    color: $text-light;
+    width: 100%;
+    gap: 10px;
+    button {
+      color: #CBAD9B;
+      text-transform: uppercase;
+      width: 200px;
+      position: relative;
+      display: flex;
+      padding: 0;
+      font-weight: $regular;
+      font-size: 1rem;
+      text-wrap: nowrap;
+      transition: 0.2s ease;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &::after {
+        content: "";
+        width: 200px;
+        position: absolute;
+        background: linear-gradient(to right, #E4E2E0 30%, transparent);
+        top: -15px;
+        height: 2px;
+        left: 0;
+      }
+
+      &.selected {
+        color: $primary;
+        font-weight: 700;
+        color: #DDAF66;
+
+      &::before{
+        content: "";
+        width: 200px;
+        position: absolute;
+        background: linear-gradient(to right, #E4E2E0 30%, transparent);
+        top: 30px;
+        height: 2px;
+        left: 0;
+}
+
+        &::after {  
+            content: "";
+            width: 200px;
+            position: absolute;
+            background: linear-gradient(to right, #E4E2E0 30%, transparent);
+            // top: 30px;
+            height: 2px;
+            left: 0;
+        }
+      }
+    }
+  }
+
+  .anchor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding-bottom: 38px;
+    text-decoration: none;
+    color: $text-light;
+    cursor: pointer;
+    font-weight: $regular;
+  }
+}

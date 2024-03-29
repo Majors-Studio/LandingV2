@@ -1,0 +1,176 @@
+@import "@/styles/theme", "@/styles/mixins";
+
+.container {
+  padding-top: 0 !important;
+}
+
+.pageHeading {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.firstSlide {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  border: 1px solid green;
+
+  img {
+    width: calc(100% - 110px);
+    max-width: 333px;
+    margin: calc(50px + 10%) auto auto 60px;
+
+    @include sm {
+      margin: calc(20px + 10%) auto 0 15%;
+    }
+  }
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  flex-direction: column;
+
+  h3 {
+    display: block !important;
+    font-weight: $regular;
+    text-shadow: 2px 2px #{$text-secondary};
+
+    strong {
+      display: inline !important;
+      font-weight: $bold;
+    }
+  }
+
+  .content {
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: calc(8.5% + 50px) 0 0 10%;
+    width: max-content;
+    height: fit-content;
+  }
+
+  .descriptionContent {
+    margin-top: #{toRem(24)};
+    font-size: 18px;
+    max-width: calc(100vw - 80px);
+  }
+
+  .slidesContainer {
+    width: 100%;
+    height: 100%;
+
+    .topBox {
+      height: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .wrapLogo {
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .bottomBox {
+      height: 78%;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      padding: 25% 5% 0;
+
+      h2 {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        color: $text-light;
+        font-weight: $bold;
+        position: relative;
+
+        &::after {
+          content: "";
+          width: 65px;
+          height: 4px;
+          position: absolute;
+          left: 0;
+          bottom: -24px;
+          background-color: $primary;
+        }
+      }
+
+      p {
+        padding-top: 45px;
+        font-weight: $regular;
+        font-size: 1rem;
+        font-family: "Futura";
+        color: $text-light;
+
+        padding-right: 32px;
+      }
+    }
+  }
+}
+
+.kvtext {
+  top: 150px;
+  margin: auto;
+  width: 100%;
+  position: absolute;
+}
+
+.newFiatContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+
+
+}
+
+.newFiatSvg {
+  position: absolute;
+  top: 26%;
+  left: 29.1%;
+
+
+}
+
+.titanoSvg {
+  position: absolute;
+  top: 29%;
+  left: 50%;
+  right: 0;
+  margin: auto;
+  transform: translateX(-50%);
+}
+
+
+
+.tradicaoFiat {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  @media (max-width: 1024px) {
+   left: 5%;
+  }
+}
+
+.chegouSuaVez {
+  position: absolute;
+  right: 4%;
+  bottom: 15%;
+
+  @include desktop {
+    width: 100%;
+    right: 44%;
+  }
+
+}

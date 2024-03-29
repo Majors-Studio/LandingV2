@@ -1,0 +1,258 @@
+@import '@/styles/theme';
+@import '@/styles/animations';
+@import '@/styles/mixins';
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .previous {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 20%;
+    height: calc(100% - 34px);
+    z-index: 4;
+  }
+
+  .next {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 20%;
+    height: calc(100% - 34px);
+    z-index: 4;
+  }
+}
+
+.story {
+  position: absolute;
+  user-select: none;
+
+  img {
+    user-select: none;
+  }
+}
+
+.video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  object-fit: cover;
+  object-position: bottom;
+  z-index: 0;
+}
+
+.story {
+  &,
+  & > div {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.clickCta {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  right: 18px;
+  align-items: center;
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  top: 30px;
+  height: 20px;
+  
+  p{
+    width: auto;
+    margin-left: 10px;
+    font-size: 10px;
+    font-weight: $bold;
+  }
+
+  img {
+    margin-left: 16px;
+    animation-name: 'pointer';
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    padding-right: 18px;
+  }
+}
+
+.imageHolder {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.scrollCta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+
+  p {
+    font-size: 1rem;
+  }
+
+  &.scrollCtaHorizontal {
+    align-items: center;
+    bottom: 0%;
+    padding: 0px;
+    p {
+      text-align: center;
+    }
+  }
+
+  &.scrollCtaVertical {
+    padding: 30px 20px 0px;
+    align-items: flex-start;
+    bottom: 0%;
+
+    p {
+      position: absolute;
+      left: 8px;
+      top: 0px;
+      text-align: center;
+      transform: rotate(-90deg);
+      transform-origin: calc(0% + 20px);
+      width: max-content;
+      font-weight: $bold;
+      font-size: 14px;
+    }
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    svg {
+      @include animationMargin;
+      &:nth-child(1) {
+        animation-delay: 0ms;
+      }
+      &:nth-child(2) {
+        animation-delay: 150ms;
+      }
+      &:nth-child(3) {
+        animation-delay: 300ms;
+      }
+    }
+  }
+
+  svg {
+    margin-bottom: 12px;
+    position: relative;
+  }
+}
+
+.container {
+  position: relative;
+  justify-items: start;
+  overflow: hidden;
+  background-color: $background-primary;
+  align-items: start;
+  width: 100%;
+  height: calc(100vh - #{$header-size});
+  height: calc(100vh - 77px);
+  min-height: calc(#{$min-mobile-height} - 44px);
+}
+
+.loadinBar {
+  animation-name: loading;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+}
+
+// .nextTopic {
+//   position: absolute;
+//   right: toRem(18);
+//   bottom: 15%;
+//   color: $text-primary;
+//   font-weight: bold;
+//   font-size: toRem(18);
+//   z-index: 5;
+
+//   svg {
+//     color: $border-primary;
+//     margin-left: toRem(9);
+//     height: toRem(12);
+//     width: auto;
+//   }
+// }
+
+.nextTopic {
+  position: absolute;
+  right: toRem(18);
+  bottom: 2.5%;
+  color: $text-primary;
+  font-weight: $bold;
+  font-size: toRem(16);
+  z-index: 2;
+  display: flex;
+  .nextTopicText{
+    display: inline;
+    svg {
+        transform: rotate(270deg)!important;
+        margin-left: toRem(10);
+    }
+  }
+}
+
+
+.gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(0deg, rgba($background-primary,1) 0%, rgba($background-primary,0) 100%);
+}
+
+.bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 20px;
+  height: 34px;
+  display: flex;
+  z-index: 2;
+  justify-content: space-between;
+
+  .barItemHolder {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+
+  .barItem {
+    width: 100%;
+    height: 4px;
+    background-color: $input-box-primary;
+    &.hasGone {
+      background-color: #FFF;
+    }
+  }
+}
+.imageHolder{
+  z-index: -1;
+  span{
+    img{
+      object-fit: cover;
+    }
+  }
+}
