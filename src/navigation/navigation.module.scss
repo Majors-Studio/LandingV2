@@ -9,7 +9,6 @@
   top: $header-size;
   color: transparent;
   left: -100%;
-  height: calc(100vh - 44px);
   background-color: black;
   transition: box-shadow, left $transition-time-quick $transition-easing;
   overflow: auto;
