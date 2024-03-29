@@ -12,7 +12,7 @@
   background-color: black;
   transition: box-shadow, left $transition-time-quick $transition-easing;
   overflow: auto;
-
+ height: calc(100vh - 44px);
   @include desktop {
     z-index: 9;
     background-color: transparent;
