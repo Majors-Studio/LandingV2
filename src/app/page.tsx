@@ -7,7 +7,7 @@ import HeroMobile from "@/sections/Hero/mobile"
 import React, { useContext, useEffect } from "react"
 
 export default function Home() {
-  const { dispatch } = useContext(Context)
+  const { state, dispatch } = useContext(Context)
 
   const handleResize = () => {
     dispatch({
@@ -24,6 +24,13 @@ export default function Home() {
       type: "SET_IS_MOBILE",
       payload: { isMobile: window?.innerWidth <= 1024 },
     })
+    
+    if (state.layout.isDesktop && state.layout.isMenuOpen) {
+      dispatch({
+        type: "SET_IS_MENU_OPEN",
+        payload: { isMenuOpen: false },
+      });
+    }
   }
 
   useEffect(() => {

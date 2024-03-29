@@ -1,0 +1,73 @@
+@import "@/styles/theme", "@/styles/mixins", "@/styles/animations";
+
+.primary {
+  background-color: $primary;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 16px;
+  position: relative;
+  cursor: pointer;
+
+  svg {
+    position: absolute;
+    right: 16px;
+    margin: auto;
+  }
+
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #DDAF66;
+  }
+  strong {
+    color:#000;
+  }
+
+}
+
+.secundary {
+  background-color: #DDAF66;
+
+  span {
+    border: none !important;
+    text-decoration: none !important;
+    outline: none;
+    
+  }
+
+  
+
+  &:hover {
+    background-color: $primary;
+  }
+  
+
+}
+
+.outline {
+  background-color: transparent;
+  border: 1px solid $primary;
+  color: $primary;
+  & svg path {
+    stroke: $primary;
+  }
+
+  &:hover {
+    color: $text-secondary;
+    opacity: 1;
+    background-color: $primary;
+    & svg path {
+      stroke: $text-secondary;
+    }
+  }
+}
+
+.disable {
+  opacity: 0.3;
+  cursor: auto;
+  &:hover {
+    opacity: 0.3;
+  }
+}

@@ -5,6 +5,7 @@ export interface LayoutType {
   isDesktop: boolean
   isMobile: boolean
   pageX: number
+  isMenuOpen: boolean
 }
 
 export const layoutInitialState: LayoutType = {
@@ -12,6 +13,7 @@ export const layoutInitialState: LayoutType = {
   isDesktop: false,
   isMobile: false,
   pageX: 0,
+  isMenuOpen: false,
 }
 
 export const layoutReducer = (
@@ -35,6 +37,11 @@ export const layoutReducer = (
         ...state,
         isMobile: action.payload.isMobile,
       }
+    case "SET_IS_MENU_OPEN":
+      return {
+          ...state,
+          isMenuOpen: action.payload.isMenuOpen,
+      };
   }
 
   return state
