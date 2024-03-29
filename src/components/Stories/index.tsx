@@ -8,6 +8,8 @@ import scssStyles from "@/utils/scssStyles"
 import { Context } from "@/contexts/MainContext"
 import { Chevron } from "../chevron"
 import Story from "./components/Story"
+import ScrollToKnow from "../ScrollToKnow"
+import NextTopic from "../NextTopic"
 
 interface StoriesProps {
   items: StoriesItemProps[]
@@ -119,81 +121,62 @@ const Stories: FC<StoriesProps> = ({ items }) => {
           <Pointer />
           <p>Toque e veja as novidades</p>
         </div>
-        <div
-          className={scssStyles([
-            styles.scrollCta,
-            items[currentIndex].scrollCtaOrientation === "vertical"
-              ? styles.scrollCtaVertical
-              : styles.scrollCtaHorizontal,
-          ])}
-        >
-          <p>Scroll para saber mais</p>
-          <Chevron chevronAngule={-90} variant="secundary" chevronColor="#fff" handleClick={() => null} />
-        </div>
+        <ScrollToKnow currentIndex={currentIndex} items={items} />
 
-        <div className={styles.nextTopic}>
-          <div
-            className={styles.nextTopicText}
-            onClick={() => {
-              next()
-            }}
-          >
-            {!!items[currentIndex]?.showNext &&
-              items[currentIndex + 1]?.title && (
-                <>
-                  {items[currentIndex + 1].nextTitle}
-                  <Chevron variant="secundary" chevronAngule={180} chevronColor="#fff" handleClick={() => null} />
-                </>
-              )}
-          </div>
-        </div>
+        <NextTopic
+          currentIndex={currentIndex}
+          items={items}
+          next={() => {
+            next()
+          }}
+        />
 
-          {items.map((story, index) => {
-            const getBgs = () => {
-              if (state.layout.pageX > 1024) {
-                return story.background?.src?.fullPath3x
-              }
-
-              if (state.layout.pageX < 768) {
-                return story.background?.src?.fullPath
-              }
-              return story.background?.src?.fullPath2x
+        {items.map((story, index) => {
+          const getBgs = () => {
+            if (state.layout.pageX > 1024) {
+              return story.background?.src?.fullPath3x
             }
-            const style: StoriesBackgroundStyleProps = {
-              backgroundImage:
-                story.background?.src &&
-                regex.testImage(story.background.src.fullPath)
-                  ? `url('${getBgs()}')`
-                  : "unset",
-              backgroundColor: story.background?.color
-                ? story.background.color
+
+            if (state.layout.pageX < 768) {
+              return story.background?.src?.fullPath
+            }
+            return story.background?.src?.fullPath2x
+          }
+          const style: StoriesBackgroundStyleProps = {
+            backgroundImage:
+              story.background?.src &&
+              regex.testImage(story.background.src.fullPath)
+                ? `url('${getBgs()}')`
                 : "unset",
-            }
-            if (story.background?.style?.backgroundPosition) {
-              style["backgroundPosition"] =
-                story.background?.style?.backgroundPosition
-            }
-            if (story.background?.style?.backgroundSize) {
-              style["backgroundSize"] = story.background?.style?.backgroundSize
-            }
-            if (story.background?.style?.backgroundRepeat) {
-              style["backgroundRepeat"] =
-                story.background?.style?.backgroundRepeat
-            }
-            return (
-              <Story
-                key={`story---${story.durationInS}${index}`}
-                story={story}
-                index={index}
-                style={style}
-                previous={previous}
-                next={next}
-                currentIndex={currentIndex}
-                swipingNext={swipingNext}
-                state={playControl}
-              />
-            )
-          })}
+            backgroundColor: story.background?.color
+              ? story.background.color
+              : "unset",
+          }
+          if (story.background?.style?.backgroundPosition) {
+            style["backgroundPosition"] =
+              story.background?.style?.backgroundPosition
+          }
+          if (story.background?.style?.backgroundSize) {
+            style["backgroundSize"] = story.background?.style?.backgroundSize
+          }
+          if (story.background?.style?.backgroundRepeat) {
+            style["backgroundRepeat"] =
+              story.background?.style?.backgroundRepeat
+          }
+          return (
+            <Story
+              key={`story---${story.durationInS}${index}`}
+              story={story}
+              index={index}
+              style={style}
+              previous={previous}
+              next={next}
+              currentIndex={currentIndex}
+              swipingNext={swipingNext}
+              state={playControl}
+            />
+          )
+        })}
         {!!items[currentIndex]?.includeGradient && (
           <div className={styles.gradient} />
         )}

@@ -1,0 +1,18 @@
+@import "@/styles/theme";
+@import "@/styles/animations";
+@import "@/styles/mixins";
+
+.nextTopic {
+  position: absolute;
+  right: toRem(18);
+  bottom: 2.5%;
+  color: $text-primary;
+  font-weight: $bold;
+  font-size: toRem(16);
+  z-index: 2;
+  display: flex;
+  .nextTopicText {
+    display: flex;
+    align-items: center;
+  }
+}
