@@ -1,6 +1,6 @@
 const PLAN_ID_PREFIX = "plan-";
 
-type PlansProps = {
+export type PlansProps = {
   id: string;
   name: string;
   price: number;
@@ -8,7 +8,7 @@ type PlansProps = {
   bestChoice?: boolean;
 };
 
-export const PLANS: PlansProps[] = [
+export const plansData: PlansProps[] = [
   {
     id: `${PLAN_ID_PREFIX}1`,
     name: "Basic",
