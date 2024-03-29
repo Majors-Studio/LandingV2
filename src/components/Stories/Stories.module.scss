@@ -14,6 +14,8 @@
     width: 20%;
     height: calc(100% - 34px);
     z-index: 4;
+background-color: transparent;
+  border: none;
   }
 
   .next {
@@ -23,6 +25,9 @@
     width: 20%;
     height: calc(100% - 34px);
     z-index: 4;
+background-color: transparent;
+  border: none;
+
   }
 }
 
@@ -137,23 +142,6 @@
   height: 100%;
   background-color: #fff;
 }
-
-// .nextTopic {
-//   position: absolute;
-//   right: toRem(18);
-//   bottom: 15%;
-//   color: $text-primary;
-//   font-weight: bold;
-//   font-size: toRem(18);
-//   z-index: 5;
-
-//   svg {
-//     color: $border-primary;
-//     margin-left: toRem(9);
-//     height: toRem(12);
-//     width: auto;
-//   }
-// }
 
 .nextTopic {
   position: absolute;

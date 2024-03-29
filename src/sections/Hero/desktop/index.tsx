@@ -44,7 +44,6 @@ const HeroDesktop: FC = () => {
 
   return (
     <div id="desktopDisplay" className={styles.container}>
-      {<h1 className={styles.pageHeading}>{items[0].title}</h1>}
       <Display
         previousEvent={(e) => {
           previous.current = e
