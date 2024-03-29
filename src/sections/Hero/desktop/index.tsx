@@ -36,9 +36,6 @@ const HeroDesktop: FC = () => {
         src: item.src.desktop,
         alt: item.altTag,
       },
-      teste: item.src.desktop,
-      altteste: item.altTag,
-      titleteste: item.titleTag,
     })
   )
 
@@ -54,11 +51,7 @@ const HeroDesktop: FC = () => {
         items={items}
       />
       <Cards
-        items={dataHero.map((d) => ({
-          ...d,
-          src: d.cardSrc.desktop,
-          title: d.cardTitle,
-        }))}
+        items={dataHero}
       />
     </div>
   )

@@ -206,16 +206,3 @@ export interface imageProps {
   alt: string;
 }
 
-export interface CardsItemsProps {
-  id: string;
-  title: string;
-  title2?: string;
-  src: string;
-  isSelected?: boolean;
-  titleTag: string;
-  altTag: string;
-  cardSrc: {
-    desktop: string;
-    mobile: string;
-  };
-}

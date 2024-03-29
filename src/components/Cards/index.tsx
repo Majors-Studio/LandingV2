@@ -1,10 +1,10 @@
 import { Context } from "@/contexts/MainContext";
-import { CardsItemsProps } from "@/models";
 import { FC, useContext } from "react";
 import styles from "./Cards.module.scss";
+import { IHero } from "@/data/hero.data";
 
 export interface CardsProps {
-  items: CardsItemsProps[];
+  items: IHero[];
 }
 
 const Cards: FC<CardsProps> = ({ items }) => {
@@ -34,7 +34,7 @@ const Cards: FC<CardsProps> = ({ items }) => {
               }}
               key={`card-${index}`}
             >
-              {item.title}
+              {state.layout.isDesktop ? item.title.desktop : item.title.mobile}
             </button>
           );
         })}

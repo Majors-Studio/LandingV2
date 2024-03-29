@@ -5,28 +5,23 @@ import { dataHero, IHero } from "@/data/hero.data"
 
 const HeroMobile: FC = () => {
   const items: IHero[] | any = []
-  dataHero.map((item, index) =>
+  dataHero.map((item) =>
     items.push({
       showNext: true,
-      nextTitle: item.cardTitle,
+      nextTitle: item.title.mobile,
       title: item.title.mobile,
       description: item.description.mobile,
       body: (
         <>
           <div className={styles.slides}>
-            {index < 1 ? (
-              <>
-              </>
-            ) : (
-              <div className={styles.slidesContainer}>
-                <div className={styles.bottomBox}>
-                  {index > 0 && <h2>{item.title.mobile}</h2>}
-                  <p className={styles.contentText}>
-                    {item.description.mobile}
-                  </p>
-                </div>
+            <div className={styles.slidesContainer}>
+              <div className={styles.bottomBox}>
+                <h2>{item.title.mobile}</h2>
+                <p className={styles.contentText}>
+                  {item.description.mobile}
+                </p>
               </div>
-            )}
+            </div>
           </div>
         </>
       ),
