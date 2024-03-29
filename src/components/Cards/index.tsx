@@ -24,13 +24,12 @@ const Cards: FC<CardsProps> = ({ items }) => {
           return (
             <button
               className={
-                index === state.layout.heroIndex - 1
+                index === state.layout.heroIndex
                   ? styles.selected
                   : ""
               }
               onClick={() => {
-                handleSetHeroIndex(index + 1);
-                
+                handleSetHeroIndex(index);
               }}
               key={`card-${index}`}
             >
