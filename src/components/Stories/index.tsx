@@ -1,15 +1,13 @@
 import { FC, useState, useEffect, useRef, useContext } from "react"
-import { AnimatePresence } from "framer-motion"
 import styles from "./Stories.module.scss"
 import { Pointer } from "@/components"
 import regex from "@/utils/testRegex"
 import { StoriesBackgroundStyleProps, StoriesItemProps } from "@/models"
-import scssStyles from "@/utils/scssStyles"
 import { Context } from "@/contexts/MainContext"
-import { Chevron } from "../chevron"
 import Story from "./components/Story"
 import ScrollToKnow from "../ScrollToKnow"
 import NextTopic from "../NextTopic"
+import Bar from "./components/Bar"
 
 interface StoriesProps {
   items: StoriesItemProps[]
@@ -66,42 +64,12 @@ const Stories: FC<StoriesProps> = ({ items }) => {
 
   return (
     <section className={styles.container}>
-      <div className={styles.bar}>
-        {items.map((story, index) => {
-          const hasGone = currentIndex > index
-          const active = currentIndex === index
-          return (
-            <div
-              key={`story-bar-${index}`}
-              className={styles.barItemHolder}
-              onClick={() => {
-                setSwipingNext(currentIndex < index)
-                setCurrentIndex(index)
-              }}
-            >
-              <div
-                className={scssStyles([
-                  styles.barItem,
-                  hasGone ? styles.hasGone : "",
-                  active ? styles.hasActive : "",
-                ])}
-              >
-                <AnimatePresence>
-                  {active && (
-                    <div
-                      className={styles.loadinBar}
-                      style={{
-                        animationDuration: `${story.durationInS}s`,
-                        animationPlayState: "running",
-                      }}
-                    />
-                  )}
-                </AnimatePresence>
-              </div>
-            </div>
-          )
-        })}
-      </div>
+      <Bar
+        currentIndex={currentIndex}
+        items={items}
+        setCurrentIndex={setCurrentIndex}
+        setSwipingNext={setSwipingNext}
+      />
       <div ref={wrapperRef} className={styles.wrapper}>
         <button
           title="Story anterior"

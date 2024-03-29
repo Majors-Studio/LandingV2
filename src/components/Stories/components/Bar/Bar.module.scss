@@ -1,0 +1,42 @@
+@import "@/styles/theme";
+@import "@/styles/animations";
+@import "@/styles/mixins";
+
+.bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 20px;
+  height: 34px;
+  display: flex;
+  z-index: 2;
+  justify-content: space-between;
+
+  .barItemHolder {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+
+  .barItem {
+    width: 100%;
+    height: 4px;
+    background-color: $input-box-primary;
+    &.hasGone {
+      background-color: #fff;
+    }
+  }
+}
+
+.loadinBar {
+  animation-name: loading;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
