@@ -47,7 +47,7 @@ export const dataMenuLabelMobile: () => MenuLabels[] = () => [
   {
     numberId: 0,
     id: "datamenu-0",
-    label: "Fiat Titano",
+    label: "Majors Solutions",
     url: "/",
     slug: "",
   },
@@ -57,7 +57,7 @@ export const dataMenuLabels: () => MenuLabels[] = () => [
   {
     numberId: 0,
     id: "datamenu-0",
-    label: "Fiat Titano",
+    label: "Majors Solutions",
     url: "/",
     slug: "",
   },

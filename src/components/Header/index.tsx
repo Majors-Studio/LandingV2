@@ -11,7 +11,6 @@ import HamburguerButton from "../HamburguerButton";
 
 const Header: FC = observer(() => {
   const [shouldHideHeader, setShouldHideHeader] = useState(false);
-  const [fuelModalOpen, setFuelModalOpen] = useState(false);
   const { dispatch, state } = useContext(Context);
 
   const MINIMUM_SCROLL = 80;
