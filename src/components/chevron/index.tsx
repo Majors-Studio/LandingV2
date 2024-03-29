@@ -30,10 +30,11 @@ export const Chevron: FC<IChevron> = ({
     >
       {variant === "secundary" ? (
         <svg
-          xmlns="http://www.w3.org/2000/svg"
           width="8.555"
           height="13.943"
           viewBox="0 0 8.555 13.943"
+          className={styles.chevron}
+          style={{ transform: `rotate(${chevronAngule}deg)` }}
         >
           <path
             id="Caminho_8361"
@@ -48,7 +49,6 @@ export const Chevron: FC<IChevron> = ({
         </svg>
       ) : (
         <svg
-          xmlns="http://www.w3.org/2000/svg"
           width="11.099"
           height="19.513"
           viewBox="0 0 11.099 19.513"

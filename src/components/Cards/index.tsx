@@ -10,7 +10,7 @@ export interface CardsProps {
 const Cards: FC<CardsProps> = ({ items }) => {
   const { state, dispatch } = useContext(Context);
 
-  const handleSetHeroIndex = (index: number) => {
+  const handleSetIndex = (index: number) => {
     dispatch({
       type: "SET_HERO_INDEX",
       payload: { heroIndex: index },
@@ -29,7 +29,7 @@ const Cards: FC<CardsProps> = ({ items }) => {
                   : ""
               }
               onClick={() => {
-                handleSetHeroIndex(index);
+                handleSetIndex(index);
               }}
               key={`card-${index}`}
             >

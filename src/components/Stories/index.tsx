@@ -128,7 +128,7 @@ const Stories: FC<StoriesProps> = ({ items }) => {
           ])}
         >
           <p>Scroll para saber mais</p>
-          <Chevron handleClick={() => null} />
+          <Chevron chevronAngule={-90} variant="secundary" chevronColor="#fff" handleClick={() => null} />
         </div>
 
         <div className={styles.nextTopic}>
@@ -142,7 +142,7 @@ const Stories: FC<StoriesProps> = ({ items }) => {
               items[currentIndex + 1]?.title && (
                 <>
                   {items[currentIndex + 1].nextTitle}
-                  <Chevron handleClick={() => null} />
+                  <Chevron variant="secundary" chevronAngule={180} chevronColor="#fff" handleClick={() => null} />
                 </>
               )}
           </div>

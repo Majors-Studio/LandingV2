@@ -62,10 +62,9 @@ background-color: transparent;
 .scrollCta {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   position: absolute;
+justify-content: flex-end;
   z-index: 2;
-  width: 100%;
 
   p {
     font-size: 1rem;
@@ -81,29 +80,23 @@ background-color: transparent;
   }
 
   &.scrollCtaVertical {
-    padding: 30px 20px 0px;
-    align-items: flex-start;
     bottom: 0%;
+width: 45px;
+height: 200px;
 
     p {
-      position: absolute;
-      left: 8px;
-      top: 0px;
-      text-align: center;
       transform: rotate(-90deg);
-      transform-origin: calc(0% + 20px);
-      width: max-content;
       font-weight: $bold;
       font-size: 14px;
+padding-left: 12px;
+
+      white-space: nowrap;
     }
   }
 
   > div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 32px;
     svg {
       @include animationMargin;
       &:nth-child(1) {
@@ -153,12 +146,9 @@ background-color: transparent;
   z-index: 2;
   display: flex;
   .nextTopicText {
-    display: inline;
-    svg {
-      transform: rotate(270deg) !important;
-      margin-left: toRem(10);
-    }
-  }
+    display: flex;
+    align-items: center;
+}
 }
 
 .gradient {
